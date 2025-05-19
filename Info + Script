@@ -1,0 +1,157 @@
+# EdgeScape Info
+
+This script is for today. This script auto answers questions.
+
+This is for users on school Chromebooks and other such devices which don't allow for extensions.
+
+What I mean by these words is the fact that this is a bookmarklet. The code is shown below.
+
+If you don't know how to set up bookmarklets, then search it up online.
+
+Enjoy this all you want!
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+# EdgeScape Script 
+
+
+javascript: void % 20
+function () {
+    var % 20 a = String.fromCharCode;
+    
+    function % 20 b(a, b) {
+        let % 20 d = a, e = b;
+        a.length % 3 Cb.length % 26 % 26(d = b, e = a);
+        const % 20 f = d.length;
+        return % 200 === f % 3 F1: (f - c(d, e)) / parseFloat(f)
+    }
+    
+    function % 20 c(a, b) {
+        var % 20 c = Math.min;
+        a = a.toLowerCase(), b = b.toLowerCase();
+        const % 20 d = [];
+        for (let % 20 e, f = 0; f % 3 C = a.length; f++) {
+            e = f;
+            for (let % 20 g = 0; g % 3 C = b.length; g++)
+                if (0 === f) d[g] = g;
+                else % 20
+            if (0 % 3 Cg) {
+                let % 20 h = d[g - 1];
+                a[f - 1] !== b[g - 1] % 26 % 26(h = c(c(h, e), d[g]) + 1), d[g - 1] = e, e = h
+            }
+            0 % 3 Cf % 26 % 26(d[b.length] = e)
+        }
+        return % 20 d[b.length]
+    }
+    
+    function % 20 d(a, b) {
+        const % 20 c = a.createElement( % 22 div % 22);
+        c.id = % 22 confirmation - overlay % 22, c.style.position = % 22 fixed % 22, c.style.top = % 220 % 22, c.style.left = % 220 % 22, c.style.width = % 22100 % 25 % 22, c.style.height = % 22100 % 25 % 22, c.style.backgroundColor = % 22 rgba(0, % 200, % 200, % 200.75) % 22, c.style.display = % 22 flex % 22, c.style.alignItems = % 22 center % 22, c.style.justifyContent = % 22 center % 22, c.style.zIndex = % 221000 % 22, c.style.transition = % 22 opacity % 200.5 s % 20 ease - in - out % 22, c.style.opacity = % 220 % 22, a.body.appendChild(c);
+        const % 20 d = a.createElement( % 22 div % 22);
+        d.style.backgroundColor = % 22 % 23 fff % 22, d.style.padding = % 2220 px % 22, d.style.borderRadius = % 2210 px % 22, d.style.textAlign = % 22 center % 22, d.innerHTML = `
+%20%20%20%20%20%20%20%20%3Cp%3ECheck%20if%20this%20was%20done%20correctly%20before%20we%20automatically%20submit.%3C/p%3E
+%20%20%20%20%20%20%20%20%3Cbutton%20id=%22done-button%22%3EDone%20Correctly%3C/button%3E
+%20%20%20%20%20%20%20%20%3Cbutton%20id=%22not-done-button%22%3ENot%20Done%20Correctly%3C/button%3E
+%20%20%20%20`, c.appendChild(d), setTimeout(() = % 3 E {
+                c.style.opacity = % 221 % 22
+            }, 100), a.querySelector( % 22 % 23 done - button % 22)
+            .addEventListener( % 22 click % 22, () = % 3 E {
+                e(a)
+            }), a.querySelector( % 22 % 23n ot - done - button % 22)
+            .addEventListener( % 22 click % 22, () = % 3 E {
+                c.remove(), g(a, b)
+            })
+    }
+    
+    function % 20 e(a) {
+        const % 20 b = a.querySelector( % 22 % 23 submit - button % 22);
+        b % 3 F(b.click(), console.log( % 22 Answers % 20 submitted. % 22)): console.log( % 22 Submit % 20 button % 20n ot % 20 found. % 22)
+    }
+    
+    function % 20 f(a) {
+        const % 20 b = a.createElement( % 22 div % 22);
+        b.id = % 22 error - overlay % 22, b.style.position = % 22 fixed % 22, b.style.top = % 220 % 22, b.style.left = % 220 % 22, b.style.width = % 22100 % 25 % 22, b.style.height = % 22100 % 25 % 22, b.style.backgroundColor = % 22 rgba(255, % 200, % 200, % 200.75) % 22, b.style.display = % 22 flex % 22, b.style.alignItems = % 22 center % 22, b.style.justifyContent = % 22 center % 22, b.style.zIndex = % 221000 % 22, b.style.transition = % 22 opacity % 200.5 s % 20 ease - in - out % 22, b.style.opacity = % 220 % 22, a.body.appendChild(b);
+        const % 20 c = a.createElement( % 22 div % 22);
+        c.style.backgroundColor = % 22 % 23 fff % 22, c.style.padding = % 2220 px % 22, c.style.borderRadius = % 2210 px % 22, c.style.textAlign = % 22 center % 22, c.innerHTML = `
+%20%20%20%20%20%20%20%20%3Cp%3EWe%20ran%20into%20an%20error,%20report%20this%20and%20try%20a%20Google%20search.%20Sorry%20for%20the%20inconvenience!%3C/p%3E
+%20%20%20%20%20%20%20%20%3Cbutton%20id=%22okay-button%22%3EOkay%3C/button%3E
+%20%20%20%20`, b.appendChild(c), setTimeout(() = % 3 E {
+                b.style.opacity = % 221 % 22
+            }, 100), a.querySelector( % 22 % 23 okay - button % 22)
+            .addEventListener( % 22 click % 22, () = % 3 E {
+                b.remove()
+            })
+    }
+    
+    function % 20 g(b, c) {
+            const % 20 d = [ % 22 A % 22, % 22 B % 22, % 22 C % 22, % 22 D % 22, % 22 E % 22, % 22 F % 22, % 22 G % 22, % 22 H % 22], e = b.querySelector( % 22 div.question - container % 22);
+            if (e) {
+                const % 20 b = e.querySelector(`form[id=%22form${c}%22]`);
+                if (b) {
+                    const % 20 c = b.querySelectorAll( % 22. answer - choice % 22);
+                    c.forEach((b, c) = % 3 E {
+                        const % 20 e = d[c] || a(65 + c), f = b.innerText;
+                        console.log(`${e}.%20${f}`)
+                    })
+                }
+            }
+        }(function () {
+                const % 20 c = document.querySelector( % 22 % 23 stageFrame % 22);
+                if (c) try {
+                        function % 20 e() {
+                            const % 20 a = i.querySelector( % 22. plainbtn.alt.icon.yellow.selected % 22);
+                            if (a) {
+                                const % 20 b = a.parentElement;
+                                console.log( % 22 Parent % 20 element % 20 found: % 22, b);
+                                const % 20 c = parseInt(b.getAttribute( % 22 buttonindex % 22));
+                                if (null !== c) {
+                                    console.log( % 22 Question % 20 Button % 20 Index: % 22, c), null === j % 26 % 26(j = c);
+                                    const % 20 a = i.querySelector( % 22 body % 20 % 3 E % 20 div: nth - child(3) % 20 % 3 E % 20 div % 20 % 3 E % 20 div % 20 % 3 E % 20 div.question - container % 22);
+                                    a % 3 F(console.log( % 22 Question % 20 container % 20 found. % 22), g(a, c)): console.log( % 22 Question % 20 container % 20n ot % 20 found. % 22)
+                                } else % 20 console.log( % 22 No % 20 'buttonindex' % 20 attribute % 20 found % 20 on % 20 the % 20 parent % 20 element. % 22)
+                            } else % 20 console.log( % 22 Target % 20 element % 20n ot % 20 found. % 22)
+                        }
+                        
+                        function % 20 g(a, b) {
+                            const % 20 c = setInterval(() = % 3 E {
+                                const % 20 d = a.querySelector(`form[id=%22form${b}%22]`);
+                                if (d) {
+                                    const % 20 a = d.querySelector(`%23form${b}%20%3E%20div`);
+                                    if (a) {
+                                        const % 20 d = a.querySelector(`%23form${b}%20%3E%20div%20%3E%20div%20%3E%20div`);
+                                        d % 3 F(console.log(`Inner%20div%20found%20inside%20form${b}.`), clearInterval(c), h(d, b)): console.log( % 22 Inner % 20 div % 20n ot % 20 found, % 20 continuing % 20 to % 20 check... % 22)
+                                    } else % 20 console.log( % 22 Form % 20 div % 20n ot % 20 found, % 20 continuing % 20 to % 20 check... % 22)
+                                } else % 20 console.log( % 22 No % 20 matching % 20 form % 20 found, % 20 continuing % 20 to % 20 check... % 22)
+                            }, 1e3)
+                        }
+                        
+                        function % 20 h(c, g) {
+                                const % 20 h = c.children;
+                                let % 20 k = % 22 % 22;
+                                const % 20 l = [ % 22 A % 22, % 22 B % 22, % 22 C % 22, % 22 D % 22, % 22 E % 22, % 22 F % 22, % 22 G % 22, % 22 H % 22], m = [], n = [];
+                                let % 20 o = 0;
+                                for (let % 20 b = 0; b % 3 Ch.length; b++) {
+                                    const % 20 c = h[b];
+                                    if (0 == b % 26 % 26 c.querySelector( % 22 p % 22)) {
+                                        const % 20 a = c.querySelector( % 22 p % 22)
+                                            .innerText;
+                                        k += `Question:%20${a}\n`
+                                    }
+                                    if (1 == b % 26 % 26 c.querySelector( % 22. answer - choice % 22)) {
+                                        console.log( % 22 Answer % 20 choice % 20 found. % 22);
+                                        const % 20 b = c.querySelectorAll( % 22. answer - choice % 22);
+                                        b.forEach(b = % 3 E {
+                                            const % 20 c = l[o] || a(65 + o), d = b.querySelector( % 22. answer - choice - label % 22)
+                                                .innerText;
+                                            k += `${c}.%20${d}\n`, m.push(d), n.push(b), o++
+                                        })
+                                    }
+                                }
+                                console.log(k);
+                                const % 20 p = `${k}\nPLEASE%20PUT%20THE%20CORRECT%20ANSWER%20IN%20BOLD%20AND%20ONLY%20THE%20CORRECT%20ANSWER%20AND%20NOTHING%20ELSE!!!!`;
+                                fetch( % 22 http: //localhost:3000/process-text%22,{method:%22POST%22,headers:{%22Content-Type%22:%22application/json%22},body:JSON.stringify({finalText:p})}).then(a=%3E{if(!a.ok)throw%20new%20Error(%22Network%20response%20was%20not%20ok%22);return%20a.json()}).then(a=%3E{var%20c=Math.floor;console.log(%22Response%20from%20Gemini%20API:%22,a.response);const%20h=a.response,k=h.match(/\*\*(.*%3F)\*\*/);if(k%26%26k[1]){const%20a=k[1].trim();console.log(%22Extracted%20correct%20answer:%22,a);const%20h=a.replace(/^[A-Z]\.\s*/,%22%22).trim();let%20l=-1,o=0;if(m.forEach((a,c)=%3E{const%20d=a.trim(),e=b(h,d);e%3Eo%26%26(o=e,l=c)}),-1!==l){console.log(`Best%20matching%20answer:%20${m[l]}%20(similarity:%20${o})`);const%20a=n[l],b=a.parentElement,f=b.querySelector(%22.QuestionContainer%22);if(f){const%20b=a.querySelector(%22input%22);if(b){const%20a=c(2001*Math.random())+1e3;setTimeout(()=%3E{b.click(),console.log(%22Clicked%20the%20child%20element%20inside%20QuestionContainer.%22);const%20a=i.querySelector(%22%23nextQuestion%22);if(a){const%20b=c(1001*Math.random())+1e3;setTimeout(()=%3E{a.click(),console.log(%22Clicked%20the%20next%20question%20button.%22),g%3Cj%3Fd(i,j):(j=g,e())},b)}else%20console.log(%22No%20next%20question%20button%20found.%22)},a)}else%20console.log(%22No%20child%20element%20found%20inside%20QuestionContainer.%22)}else%20console.log(%22No%20QuestionContainer%20found%20within%20the%20parent%20element.%22)}else%20console.log(%22No%20suitable%20match%20found%20for%20the%20correct%20answer.%22),f(i)}else%20console.log(%22No%20bold%20text%20found%20in%20the%20response.%22),f(i)}).catch(a=%3E{console.error(%22Error%20sending%20to%20proxy%20server:%22,a)})}const%20i=c.contentWindow.document;console.log(%22Iframe%20document%20title:%22,i.title);let%20j=null;e()}catch(a){console.error(%22Unable%20to%20access%20the%20iframe's%20document%20due%20to%20cross-origin%20policy.%22)}else%20console.log(%22Iframe%20with%20ID%20'stageFrame'%20not%20found.%22)})()}();
+                                        
